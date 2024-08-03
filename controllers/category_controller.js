@@ -19,6 +19,7 @@ export async function addCategory(req, res) {
 
   const category = new Category({
     name: req.body["category_name"],
+    description: req.body["description"],
     featureImage: req.files.featureImage[0].filename,
     bannerImage: req.files.bannerImage[0].filename,
     imageCollection: req.files.imageCollection.map((file) => file.filename),
