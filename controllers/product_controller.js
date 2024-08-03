@@ -17,6 +17,6 @@ export async function getAllProducts(req, res) {
 
 export async function getProduct(req, res) {
   const product = await Product.findById(req.params.id);
-  await product.populate("categories", "name featureImage -_id");
+  await product.populate("categories", "name featureImage _id");
   res.send(product);
 }
